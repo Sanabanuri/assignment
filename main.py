@@ -26,7 +26,7 @@ class Student(BaseModel):
 app = FastAPI()
 database=[]
 
-@app.get('/',response_model=Item)
+@app.get('/')
 def read_root():
     return {"name":"ali","number1":1.1,"number2":1}
 
