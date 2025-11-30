@@ -34,7 +34,10 @@ def read_root():
 def read_students():
     with Session(engine) as session:
         result = session.execute(text("""SELECT * FROM Student"""))
-        return result.fetchall()
+        response=[]
+        for row in result:
+            response.append(row._asdict())
+        return response
 
 @app.post('/student')
 def create_student(student: Student):
