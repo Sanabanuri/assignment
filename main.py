@@ -18,7 +18,8 @@ with Session(engine) as session:
     session.commit()
 
 
-    
+class Session(Session):
+    pass    
 
 class GenderEnum(str, Enum):
     MALE = "male"
