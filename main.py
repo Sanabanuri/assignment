@@ -11,6 +11,10 @@ engine = create_engine("sqlite:///isdp.db")
 
 with Session(engine) as session:
     session.execute(text("""CREATE TABLE IF NOT EXISTS Student (id INTEGER PRIMARY KEY, name TEXT, email TEXT, age INTEGER, gender TEXT, course TEXT)"""))
+    session.execute(text("""INSERT INTO Student (name, email, age, gender, course) VALUES ('ali', 'ali@gmail.com', 20, 'male', 'python')"""))
+    results=session.execute(text("""SELECT * FROM Student"""))
+    for row in results:
+        print(row)
     session.commit()
 
 class GenderEnum(str, Enum):

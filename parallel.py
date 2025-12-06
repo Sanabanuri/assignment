@@ -1,0 +1,1 @@
+session.execute(text("""INSERT INTO Student (name, email, age, gender, course) VALUES ('ali', 'ali@gmail.com', 20, 'male', 'python')"""))
